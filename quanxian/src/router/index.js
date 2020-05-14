@@ -34,10 +34,10 @@ const routes = [
           import(/* webpackChunkName: "about" */ "../views/page1.vue"),
       },
       {
-        path: "/page2",
-        name: "page2",
+        path: "/rolehandle",
+        name: "rolehandle",
         component: () =>
-          import(/* webpackChunkName: "about" */ "../views/page2.vue"),
+          import(/* webpackChunkName: "about" */ "../views/rolehandle.vue"),
       },
       {
         path: "/page3",

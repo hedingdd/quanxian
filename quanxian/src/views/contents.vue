@@ -29,12 +29,12 @@
             </div>
         </div>
         <div class='side' ref='side'>
-            <el-menu default-active="/page1" :router='jump' class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse" :collapse-transition="false">
+            <el-menu default-active="/page1" style="font-size:12px" :router='jump' class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse" :collapse-transition="false">
                 <el-menu-item index="/page1">
                   <i class="el-icon-user"></i>
                   <span slot="title">导航一</span>
                 </el-menu-item>
-                <el-menu-item index="page2">
+                <el-menu-item index="rolehandle">
                     <i class="el-icon-menu"></i>
                     <span slot="title">导航二</span>
                 </el-menu-item>
@@ -177,5 +177,8 @@ export default {
 .pageOne{
   width: 93%;
   transition: all 0.3s ease 0s
+}
+/deep/.el-table{
+  font-size: 12px;
 }
 </style>
