@@ -29,7 +29,7 @@
             </div>
         </div>
         <div class='side' ref='side'>
-            <el-menu default-active="/page1" :router='jump' class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
+            <el-menu default-active="/page1" :router='jump' class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse" :collapse-transition="false">
                 <el-menu-item index="/page1">
                   <i class="el-icon-user"></i>
                   <span slot="title">导航一</span>
@@ -67,8 +67,8 @@ export default {
     watch:{
       toShow(newName, oldName){
         if(newName){
-          this.$refs.side.style.width = '10%';
-          this.$refs.pageOne.style.width = '90%'
+          this.$refs.side.style.width = '7%';
+          this.$refs.pageOne.style.width = '93%'
         }else{
           this.$refs.side.style.width = '15%';
           this.$refs.pageOne.style.width = '85%'
@@ -89,14 +89,22 @@ export default {
   }
 </script>
 
-<style scoped>
+<style scoped lang="less">
 .el-menu-vertical-demo:not(.el-menu--collapse) {
-    width: 200px;
+    width: 100%;
     min-height: 400px;
   }
+//  /deep/ .el-menu-vertical-demo{
+//     width: 100%;
+//   }
   /* .side /deep/ .el-menu-vertical-demo{
     width: 100%;
   } */
+  /deep/ .el-menu--collapse{
+    width: 100%;
+    text-align: center;
+
+  }
   .btnDisplay /deep/ span{
     background: #fff !important;
     padding: 0px !important;
@@ -162,10 +170,12 @@ export default {
   height: 20px;
 }
 .side{
-    width: 10%;
+    width: 7%;
     text-align: left;
+    transition: all 0.3s ease 0s
 }
 .pageOne{
-  width: 90%;
+  width: 93%;
+  transition: all 0.3s ease 0s
 }
 </style>
